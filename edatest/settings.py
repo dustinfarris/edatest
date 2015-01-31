@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'people',
 )
 
@@ -48,11 +49,24 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'edatest.urls'
 
 WSGI_APPLICATION = 'edatest.wsgi.application'
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = (
+  'x-requested-with',
+  'content-type',
+  'accept',
+  'origin',
+  'authorization',
+  'x-csrftoken',
+  'cache-control',
+  'accept-encoding',
+)
 
 
 # Database
